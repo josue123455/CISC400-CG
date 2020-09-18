@@ -1,0 +1,23 @@
+explain the code line by line
+
+line 1- this is the script and it is using javascript
+line 2- this is telling the telling the program that it cannot use undeclared variables thus the strict word
+line 3- function for initializer
+line 4- this is creates the canvas by using the document.get element id( calling git webgl-canvas)
+line 5- comment
+line 6- this is checking to see if the canvas was found on the web page that was launched
+line 7- returns the actual error message
+line8- closing brackets
+line9- this is making sure the context that you have in your code is making it to the canvas on the webpage
+line10- comment
+line11- this is a message that is GL
+line12- option one is the hooray message if it is being displayed right
+line13- this is the sorry message that means the content was not displayed
+line14- the messages are being delivered int eh alert when the user launches the webpage this is the first thing they get and its an alert message
+line 15- closing brackets
+line16- comment
+line17- window.onload means that the content will load on the screen without needing any sort of inout
+and this is processing the initializer which is the function and this is how the whole program is started
+line 18- the script is being closed
+
+

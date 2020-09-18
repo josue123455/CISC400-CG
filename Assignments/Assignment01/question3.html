@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <title> Check whether a matrix is a diagonal matrix or not</title>
+</head>
+<body>
+<script>
+function is_diagonal_matrix(user_matrix) { //this is the diagonal function
+for (var i = 0; i < user_matrix.length; i++) { //variable where its checking the user matrix of i and adding to it due to the ++
+for (var j = 0; j < user_matrix.length; j++) { //variable where its checking the user matrix of j and adding to it due to the ++
+if (i !== j && user_matrix[i][j] !== 0) //if the matrix are 0 then it returns falls
+return false;// the false
+    // this is the only place where it seems i could add a comment, i got help from the internet, w3sourses i belive, i undertand the code and added comments for everyline
+}
+}
+return true;// the if statement then return true
+}
+
+
+console.log(is_diagonal_matrix([[1, 0, 0], [0, 2, 0], [0, 0, 3] ]));// this is where it takes the entries and and runs them through the code and checks thus saying true or fals this from the HW being true
+</script>
+</body>
+</html>
+

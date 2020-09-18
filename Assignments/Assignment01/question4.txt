@@ -1,0 +1,8 @@
+immediate mode- a mode in which graphics API library takes structure from API users. instructions to render each element
+on the screen to be executed by the API user ever time the frame is rendered
+
+Retained mode- the API user only needs to call the API to change the elements that needs to look different
+so the API library holds a lost of elements to draw. this library has been passed in before
+
+so which one is better immediate mode is its more lightweight and it can handle animations better than retained
+ and should perform better

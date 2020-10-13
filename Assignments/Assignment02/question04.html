@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<body>
+<canvas width = "600" height = "600" id = "my_Canvas"></canvas>
+
+<script>
+
+    /*=================Creating a canvas=========================*/
+    var canvas = document.getElementById('my_Canvas');
+    gl = canvas.getContext('experimental-webgl');
+    /*===========Defining and storing the geometry==============*/
+    var vertices = [
+        -0.3,0.3,0.0,
+        -0.8,-0.7,0.0,
+        0.3,-0.7,0.0,
+    ];
+
+    //Create an empty buffer object and store vertex data
+    var vertex_buffer = gl.createBuffer();
+    //Create a new buffer
+    gl.bindBuffer(gl.ARRAY_BUFFER, vertex_buffer);
+    //bind it to the current buffer
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+    // Pass the buffer data
+    gl.bindBuffer(gl.ARRAY_BUFFER, null);
+
+    /*========================Shaders============================*/
+
+    //vertex shader source code
+    var vertCode =
+        'attribute vec4 a_Position;\n' +
+        'uniform float u_CosB, u_SinB;\n' +
+        'void main() {\n' +
+        '  gl_Position.x = a_Position.x * u_CosB - a_Position.y *u_SinB;\n'+
+        '  gl_Position.y = a_Position.x * u_SinB + a_Position.y * u_CosB;\n'+
+        '  gl_Position.z = a_Position.z;\n' +
+        '  gl_Position.w = 1.0;\n' +
+        '}\n';
+
+    //Create a vertex shader program object and compile it
+    var vertShader = gl.createShader(gl.VERTEX_SHADER);
+    gl.shaderSource(vertShader, vertCode);
+    gl.compileShader(vertShader);
+
+
+    //fragment shader program
+    var fragCode =
+        'void main(void) {\n' +
+        '  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.1);\n' +
+        function main() {
+
+             // Set the positions of vertices
+              var n = initVertexBuffers(gl);
+
+              // Pass the data required to rotate the shape to the vertex shader
+              var radian = Math.PI * ANGLE / 180.0; // Convert to radians
+              var cosB = Math.cos(radian);
+             var sinB = Math.sin(radian);
+
+              var u_CosB = gl.getUniformLocation(gl.program, 'u_CosB');
+              var u_SinB = gl.getUniformLocation(gl.program, 'u_SinB');
+
+           gl.uniform1f(u_CosB, cosB);
+           gl.uniform1f(u_SinB, sinB);
+
+              // Set the color for clearing <canvas>
+
+            // Draw a triangle
+              gl.drawArrays(gl.TRIANGLES, 0, n);
+           }
+
+       function initVertexBuffers(gl) {
+              var vertices = new Float32Array([
+                    0.0, 0.5,  -0.5, -0.5,  0.5, -0.5
+                  ]);
+              var n = 3; // The number of vertices
+
+              return n;
+       }
+
+
+
+</script>
+</body>
+</html>

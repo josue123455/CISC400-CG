@@ -43,7 +43,7 @@
     //fragment shader source codes
     var fragCode =
         'void main(void) {\n' +
-        '  gl_FragColor = vec4(0.0, 0.0, 0.0, 0.1);\n' +
+        '  gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);\n' +
         '}\n';
 
     //Create a fragment shader program object and compile it
@@ -73,13 +73,13 @@
     gl.uniform4f(translation, Tx, Ty, Tz, 0.0);
     /*=================Drawing the riangle and transforming it========================*/
 
-    gl.clearColor(0, 0, 0, 1);
+    gl.clearColor(0, 1, 0, 1);
     gl.enable(gl.DEPTH_TEST);
 
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.viewport(0,0,canvas.width,canvas.height);
     gl.drawArrays(gl.TRIANGLES, 0, 3);
-    
+
 
 </script>
 </body>

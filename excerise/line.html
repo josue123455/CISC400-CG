@@ -1,0 +1,40 @@
+<script>
+canvas = document.getElementById('canvas');
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+gl = canvas.getContext('webgl2',{
+antialias: true,
+depth: false,
+stencil: false
+});
+gl.viewport(0,0,canvas.width,canvas.height);
+
+
+
+array = {
+pos: {
+numComponents: 2,
+data: [-0.03, -1  ,  0.03, 1],
+},
+};
+<script
+Program = twgl.createProgramInfo(gl, [
+`#version 300 es
+precision highp float;
+in vec2 pos;
+void main(){gl_Position = vec4(pos, 0.0 , 1.0);}`,
+`#version 300 es
+precision highp float;
+out vec4 Color;
+void main(){Color.xyz = vec3(0.0) ; Color.a = 1.0;}
+`
+]);
+Attrib = twgl.createBufferInfoFromArrays(gl, array);
+
+obj = {
+type: gl.LINES,
+programInfo: Program,
+bufferInfo: Attrib,
+//count: 1
+};
+requestAnimationFrame(() => twgl.drawObjectList(gl, [obj]));

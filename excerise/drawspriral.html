@@ -117,11 +117,11 @@
         let z = 0;
         for (let i = 0; i < numVertices; i++){
            r = r - 0.001
-           j += 12 * Math.PI / numVertices;// this is the math for math PI is a circle so it knows 360
-           object.vertices.push(r * Math.cos(j)); // handling the cos math for the vertices of j
-           object.vertices.push(r * Math.sin(j)); //handling the sin math for the vertices of j
-           object.vertices.push(0); //the 0 that was defined is getting pushed
-           object.indices.push(i); // the i in the for loop is getting pushed
+           j += 12 * Math.PI / numVertices;
+           object.vertices.push(r * Math.cos(j)); // value of x
+           object.vertices.push(r * Math.sin(j));//y
+           object.vertices.push(0);//z
+           object.indices.push(i);
         }
         return object;// returnign the onject of the vertices once the math has been performed
 

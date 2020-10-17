@@ -112,11 +112,11 @@
 
       function draw_circle(numVertices){// function for drawing the circle
         const object = {vertices:[], indices :[]};// wea are brining the vertices and they have already been defined on line 109 and 110
-        let j = 0; // giving the variable j a 0 because will start from nothing
+        let r = 0; // giving the variable r a 0 because will start from nothing
         for (let i = 0; i < numVertices; i++){// this will help with the loop and adds to the 0 so when the loop runs it keeps adding
-           j += 2 * Math.PI / numVertices;// this is the math for math PI is a circle so it knows 360
-           object.vertices.push(0.5 * Math.cos(j)); // handling the cos math for the vertices of j
-           object.vertices.push(0.5 * Math.sin(j)); //handling the sin math for the vertices of j
+           r += 2 * Math.PI / numVertices;// this is the math for math PI is a circle so it knows 360
+           object.vertices.push(0.5 * Math.cos(r)); // handling the cos math for the vertices of r
+           object.vertices.push(0.5 * Math.sin(r)); //handling the sin math for the vertices of r
            object.vertices.push(0); //the 0 that was defined is getting pushed
            object.indices.push(i); // the i in the for loop is getting pushed
         }

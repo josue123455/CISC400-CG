@@ -5,7 +5,7 @@
     <title>Translate a Triangle</title>
 
 <body onload="main()">
-<canvas id="webgl" width="400" height="400">
+<canvas id="webgl" width="800" height="800">
     Please use a browser that supports "canvas"
 </canvas>
 </body>
@@ -15,6 +15,7 @@
 <script src="https://rawgit.com/huningxin/webglbook_examples/master/lib/cuon-utils.js"></script>
 <script src="https://rawgit.com/huningxin/webglbook_examples/master/lib/cuon-matrix.js"></script>
 <script type="text/javascript">
+    //code from professor github code modified by me
     // LookAtTrianglesWithKeys.js (c) 2012 matsuda
     // Vertex shader program
     var VSHADER_SOURCE =
@@ -82,9 +83,9 @@
     function initVertexBuffers(gl) {
         var verticesColors = new Float32Array([
 
-            0.0,  0.5,   0.0,  0.7,  0.7,  1.0,  // The front blue one
-            -0.5, -0.5,   0.0,  0.4,  0.4,  1.0,
-            0.5, -0.5,   0.0,  1.0,  0.4,  0.4,
+            0.0,  0.5,   0.0,  0.7,  0.2,  .0,
+            -0.5, -0.5,   0.0,  0.4,  0.7,  .4,
+            0.5, -0.5,   0.0,  4.0,  0.4,  1.,
         ]);
         var n = 3;
 
@@ -123,17 +124,20 @@
         return n;
     }
 
-    var g_eyeX = 0.20, g_eyeY = 0.25, g_eyeZ = 0.25; // Eye position
+    var g_eyeX = 0.0, g_eyeY = 0.0, g_eyeZ = 0.20; // Eye position
     function keydown(ev, gl, n, u_ViewMatrix, viewMatrix) {
-        if(ev.keyCode == 39) { // The right arrow key was pressed
-            g_eyeX += 0.05;
+        if(ev.keyCode == 40) { // The right arrow key was pressed
+            g_eyeY += 0.05;
         } else
-        if (ev.keyCode == 37) { // The left arrow key was pressed
-            g_eyeX -= 0.05;
-        } else { return; }
-        draw(gl, n, u_ViewMatrix, viewMatrix);
-        if (ev.keyCode == 40) { // The left arrow key was pressed
-            g_eyeX -= 0.05;
+        if (ev.keyCode == 38) { // The left arrow key was pressed
+            g_eyeY -= 0.05;
+        } else
+
+        if(ev.keyCode == 37) { // The right arrow key was pressed
+            g_eyeX -= 0.1;
+        } else
+        if (ev.keyCode == 39) { // The left arrow key was pressed
+            g_eyeX += 0.1;
         } else { return; }
         draw(gl, n, u_ViewMatrix, viewMatrix);
     }

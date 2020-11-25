@@ -1,0 +1,7 @@
+
+
+two important phenomena occur when light hits an object
+
+#the 1st one is that depending on the light source and direction the surface color is shaded.
+
+#the 2nd one is that depending on the source and direction of the light, the objects cash a shadow in the ground or the floor.

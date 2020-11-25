@@ -1,0 +1,4 @@
+The role of the cos in the diffuse refection is the calculate the angle of
+where the reflected light will leave the object after.
+so we have light hitting the object directly and the cos will help calculate the direction the
+light is to reflect off the object. 

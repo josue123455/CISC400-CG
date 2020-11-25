@@ -1,0 +1,7 @@
+Explain the difference between diffuse and ambient reflection.
+
+Diffuse reflection- There is a light source hitting the object with light and the
+reflection from the light are bouncing off the object equally.
+
+Ambient reflection - Ambient reflection is the reflection of light from another light source,
+the reflection leaving the object is the same as the reflected light coming onto the object.

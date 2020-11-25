@@ -1,0 +1,14 @@
+What are the three different types of light? Make sure to give an example of each
+
+1st- is directional light this is best represented as natural light from the sun it's parallel and its very far away.
+meaning that the light hits an object directly.
+
+2nd- point light this type of light source emits light in all directions from one single point. the best way to represent
+this is to think about a light bulb or a lamp, in your room.
+
+3rd- Ambient light or indirect light emitted from other light source whether its directional or point. its light reflected
+of of object and hits another object directly. You can think of this when light hits a mirror and bounces of the mirror to
+hit another object.
+
+
+

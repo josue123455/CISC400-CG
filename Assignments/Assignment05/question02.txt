@@ -1,0 +1,5 @@
+What are the two things you need to consider when talking about shading?
+
+The first thing to consider is the type of light source that is emitting light.
+
+the second is how the light is reflected from surfaces of an object and enters the eye.

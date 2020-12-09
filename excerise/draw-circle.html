@@ -1,4 +1,4 @@
-<html>
+<html lang="">
 <head>
   <title>Real-Time 3D Graphics with WebGL2</title>
   <link rel="shortcut icon" type="image/png" href="../common/images/favicon.png" />
@@ -34,6 +34,10 @@
     void main(void) {
       // Set the result as red
       fragColor = vec4(1.0, 0.0, 0.0, 1.0);
+
+
+
+
     }
   </script>
 
@@ -98,21 +102,21 @@
       // Use this program instance
       gl.useProgram(program);
       // We attach the location of these shader values to the program instance
-      // for easy access later in the code
+      // for easy access later in the coder
       program.aVertexPosition = gl.getAttribLocation(program, 'aVertexPosition');
     }
 
     // Set up the buffers for the square watched the video at the end followed steps and will explain the code
     function initBuffers() {
       let circle; // variable for circle
-      circle = draw_circle(100);// defining the variable circle = draw circle and we will give it a 100 vertices to improve the shape
+      circle = draw_circle(1000);// defining the variable circle = draw circle and we will give it a 100 vertices to improve the shape
       const vertices = circle.vertices; //we are not giving it vertices as we are using circle vertices
       indices = circle.indices;// the we are not giving it indices because we are using circle indices
 
 
       function draw_circle(numVertices){// function for drawing the circle
         const object = {vertices:[], indices :[]};// wea are brining the vertices and they have already been defined on line 109 and 110
-        let r = 0; // giving the variable r a 0 because will start from nothing
+        let r = 125; // giving the variable r a 0 because will start from nothing
         for (let i = 0; i < numVertices; i++){// this will help with the loop and adds to the 0 so when the loop runs it keeps adding
            r += 2 * Math.PI / numVertices;// this is the math for math PI is a circle so it knows 360
            object.vertices.push(0.5 * Math.cos(r)); // handling the cos math for the vertices of r
@@ -175,8 +179,8 @@
       const canvas = utils.getCanvas('webgl-canvas');
 
       // Set the canvas to the size of the screen
-      canvas.width = 500; // width of canvas 5
-      canvas.height = 500; // heigh of canvas when working with cirles its best for the hight and width to be dynamic
+      canvas.width = 250; // width of canvas 5
+      canvas.height = 250; // heigh of canvas when working with cirles its best for the hight and width to be dynamic
 
       // Retrieve a WebGL context
       gl = utils.getGLContext(canvas);
@@ -188,6 +192,8 @@
       initBuffers();
       draw();
     }
+
+
 
     // Call init once the webpage has loaded
     window.onload = init;

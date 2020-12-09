@@ -2,22 +2,22 @@
 
 <head>
   <title>Real-Time 3D Graphics with WebGL2</title>
-  <link rel="shortcut icon" type="image/png" href="/common/images/favicon.png" />
+  <link rel="shortcut icon" type="image/png" href="../common/images/favicon.png" />
 
   <!-- libraries -->
-  <link rel="stylesheet" href="/common/lib/normalize.css">
-  <script type="text/javascript" src="/common/lib/dat.gui.js"></script>
-  <script type="text/javascript" src="/common/lib/gl-matrix.js"></script>
+  <link rel="stylesheet" href="../common/lib/normalize.css">
+  <script type="text/javascript" src="../common/lib/dat.gui.js"></script>
+  <script type="text/javascript" src="../common/lib/gl-matrix.js"></script>
 
   <!-- modules -->
-  <script type="text/javascript" src="/common/js/utils.js"></script>
-  <script type="text/javascript" src="/common/js/Program.js"></script>
-  <script type="text/javascript" src="/common/js/Scene.js"></script>
-  <script type="text/javascript" src="/common/js/Axis.js"></script>
-  <script type="text/javascript" src="/common/js/Floor.js"></script>
-  <script type="text/javascript" src="/common/js/Camera.js"></script>
-  <script type="text/javascript" src="/common/js/Controls.js"></script>
-  <script type="text/javascript" src="/common/js/Transforms.js"></script>
+  <script type="text/javascript" src="../common/js/utils.js"></script>
+  <script type="text/javascript" src="../common/js/Program.js"></script>
+  <script type="text/javascript" src="../common/js/Scene.js"></script>
+  <script type="text/javascript" src="../common/js/Axis.js"></script>
+  <script type="text/javascript" src="../common/js/Floor.js"></script>
+  <script type="text/javascript" src="../common/js/Camera.js"></script>
+  <script type="text/javascript" src="../common/js/Controls.js"></script>
+  <script type="text/javascript" src="../common/js/Transforms.js"></script>
 
   <script id="vertex-shader" type="x-shader/x-vertex">
     #version 300 es
@@ -179,9 +179,9 @@
 
     function load() {
       scene.add(new Floor(80, 2));
-      scene.load('/common/models/geometries/ball.json', 'ball');
-      scene.load('/common/models/geometries/flag.json', 'flagStart');
-      scene.load('/common/models/geometries/flag.json', 'flagEnd');
+      scene.load('../common/models/geometries/ball.json', 'ball');
+      scene.load('../common/models/geometries/flag.json', 'flagStart');
+      scene.load('../common/models/geometries/flag.json', 'flagEnd');
       interpolate();
     }
 
